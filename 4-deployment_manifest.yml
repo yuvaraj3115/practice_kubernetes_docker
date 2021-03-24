@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yamifood_deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: yamifood
+  template:
+    metadata:
+      labels:
+        app: yamifood
+    spec:
+      containers:
+        - name: yamifoodcontainer
+          image: yuvaraj3115/yamifood:1.0
+          ports:
+            - name: web
+              containerPort: 8080
+              protocol: TCP

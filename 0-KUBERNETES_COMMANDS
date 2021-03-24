@@ -1,0 +1,35 @@
+kubectl config view     (to show cluster info)
+kubectl config set-context <context name>
+kubectl config get-contexts
+kubectl config set aws-cluster aerver-address https://10.0.0.0
+
+kubectl apply -f <pod.yml>
+kubectl delete <podname>
+kubectl get pods
+kubectl get pods --namespace <namespace>
+kubectl describe pods <pod name>
+kubectl port-forward <podname> 8080:8080
+kubectl logs <podname>
+kubectl exec -it <podname> /bin/bash
+
+kubectl apply -f <replicaset.yml>
+kubectl describe rs <replicaset name>
+kubectl scale replicasets <replicaset name> --replicas=4
+kubectl delete rs <replicaset name>
+
+kubectl apply -f <deployment.yml>
+kubectl describe deployment <deploymet name>
+kubectl delete deployment <deployment name>
+kubectl edit deployment <deployment name>
+kubectl get deployments
+
+kubectl get po -o wide
+kubectl run myapp --image=nginx --replicas=4
+kubectl expose deployment myapp --port 80 --type=NodePort --name=myapp-service
+
+
+kubectl create -f <namespace.yml>
+kubectl get namespaces
+kubectl get deployments -n <namespace name>
+
+minikube service <service name>
